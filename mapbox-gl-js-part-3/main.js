@@ -2,7 +2,7 @@ var mystyle = {
     "version": 8,
     "name": "Mijn eigen Stijl",
     "glyphs": "http://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
-    "sprite": "http://openmaptiles.org/sprites/",
+    "sprite": "https://maps.tilehosting.com/styles/bright/sprite",
     "sources": {
             "pdok": {
                 "type": "vector",
@@ -44,11 +44,10 @@ var mystyle = {
             }
         },
         {
-            "id": "poi-park",
+            "id": "poi-functional",
             "type": "symbol",
             "source": "pdok",
-            "source-layer": "poi",
-            "minzoom": 15,
+            "source-layer": "label",
             "filter": [
                 "all",
                 [
@@ -58,25 +57,13 @@ var mystyle = {
                 ],
                 [
                     "in",
-                    "subclass",
-                    "park",
-                    "playground"
+                    "lod1",
+                    "functional"
                 ]
             ],
             "layout": {
-                "icon-image": "playground_11",
-                "text-padding": 2,
-                "text-font": [
-                    "Lato"
-                ],
-                "text-anchor": "center",
-                "text-field": "{name}",
-                "text-offset": [
-                    0,
-                    0.6
-                ],
-                "text-size": 12,
-                "text-max-width": 9
+                "icon-image": "ice_cream_11"
+
             },
             "paint": {
                 "text-halo-blur": 0.5,
@@ -135,7 +122,7 @@ var map = new mapboxgl.Map({
     pitch: 60,
     bearing: 62.4,
     center: [4.8, 52.4]
-}); 
+});
 
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl(), "top-left");
@@ -166,72 +153,3 @@ map.on('click', 'admin', function (e) {
 if (!mapboxgl.supported()) {
     alert('Your browser does not support Mapbox GL');
 };
-
-// ADDING a GEOJSON
-
-var geojsonpoints = {
-    "type": "FeatureCollection",
-    "features":
-        [
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Gaia pond"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    5.6666815,
-                    51.988461
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": ""
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    5.66811919,
-                    51.9863602
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Orion"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    5.6664562,
-                    51.985058
-                ]
-            }
-        }
-    ]
-};
-
-map.on('ĺoad', function () {
-    // ADD GEOJSON SOURCE
-    map.addSource('punten', {
-        'type': 'geojson',
-        'data': geojsonpoints
-    });
-    // ADD an extra layer
-    map.addLayer({
-        'id': 'geojson-points',
-        'type': 'circle',
-        'source': 'punten',
-        'layout':{},
-        'paint': {
-            'circle-color': '#000fff',
-            'circle-radius': 10
-        }
-    });
-});
-
-
