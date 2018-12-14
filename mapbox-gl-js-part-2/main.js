@@ -57,73 +57,34 @@ var map = new mapboxgl.Map({
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl(), "top-left");
 
-
-
-// ADDING a GEOJSON
-
-var geojsonpoints = {
+// Make a GEOJSON
+var wurjson = {
     "type": "FeatureCollection",
-    "features":
-        [
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Gaia pond"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    5.6666815,
-                    51.988461
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": ""
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    5.66811919,
-                    51.9863602
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Orion"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    5.6664562,
-                    51.985058
-                ]
-            }
-        }
+    "name": "15yrMGI",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        { "type": "Feature", "properties": { "fid": 0, "height": 60 }, "geometry": { "type": "Point", "coordinates": [5.66647, 51.98514] } },
+        { "type": "Feature", "properties": { "fid": 1, "height": 45 }, "geometry": { "type": "Point", "coordinates": [5.66801, 51.9864] } },
+        { "type": "Feature", "properties": { "fid": 2, "height": 100 }, "geometry": { "type": "Point", "coordinates": [5.66361, 51.98531] } },
+        { "type": "Feature", "properties": { "fid": 3, "height": 30 }, "geometry": { "type": "Polygon", "coordinates": [[[5.66554, 51.98675], [5.66832, 51.9875], [5.66778, 51.98825], [5.66602, 51.98779], [5.66591, 51.98784], [5.66501, 51.98758], [5.66498, 51.98753], [5.66554, 51.98675]]] } }
     ]
 };
-
-map.on('ĺoad', function () {
+// On Load add GeoJSON SOURCE and LAYER
+map.on('load', function (e) {
     // ADD GEOJSON SOURCE
     map.addSource('punten', {
         'type': 'geojson',
-        'data': geojsonpoints
+        'data': wurjson
     });
     // ADD an extra layer
     map.addLayer({
         'id': 'geojson-points',
         'type': 'circle',
         'source': 'punten',
-        'layout':{},
+        'layout': {},
         'paint': {
             'circle-color': '#000fff',
             'circle-radius': 10
         }
     });
 });
-
-

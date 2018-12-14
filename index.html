@@ -28,9 +28,11 @@
           <h2 style="margin: 0 0 40px 0;"></h2>
           <h3>Presentation and workshop for MGI 15 years!</h3>
           <h3 style="margin: 0 0 0 0;">By: Niene Boeijen</h3>
+          <p>& Steven Ottens</p>
         </section>
         <section>
           <h1>This presentation:</h1>
+          <p>and all materials</p>
           <h2 style="text-transform: initial;"><a href="https://nieneb.github.io/mgi_workshop/.">www.github.com/NieneB/mgi_workshop</a></h2>
         </section>
         <!-- ABOUT ME ME ME! -->
@@ -97,25 +99,23 @@
           <ul>
             <li>Web maps</li>
             <li>From raster to vector</li>
+            <li>Examples</li>            
             <li>About vector tiles</li>
-            <li>examples</li>
+            <li>MapboxGL.js</li>
           </ul>
+          <h1>Hands on! Workshop</h1>
         </section>
         <section>
-          <h1>Goal of today!</h1>
-          <p> At the end of this workshop, you will have <b>your own web page with an interactive map!</b>
-            Including
-            custom data and different background maps, of the area you want to show! Your web page will be
-            hosted on
-            Github, so you can <b>immediately share your progress with all your family and friends!</b></p>
+          <h1>Goal of the workshop!</h1>
+          <p> At the end of this workshop, you will have your own web page with an interactive map based on vector tiles! Custom
+          styled by yourself! Your web page will be hosted on Github, so you can <b>immediately share your progress with all your family and friends!</b></p>
             <img src="https://media.giphy.com/media/6KKab1ydLq1uU/giphy.gif">
         </section>
         <section>
           <h1> Beginners</h1>
           <img src="https://media.giphy.com/media/AEcZfXZZNCcQU/giphy.gif" width="250px">
           <p>For beginners means: if you have NO knowledge of JavaScript, HTML, CSS, Leaflet.js and D3.js,
-            this workshop
-            will help you get started!</p>
+            this workshop will help you get started!</p>
         </section>
       </section>
       <!--WEB MAP  -->
@@ -395,6 +395,10 @@
           <section data-background="presentation/img/PIP_kaart_3.png">
             <a href="https://bertspaan.nl/paradijs-in-de-polder/#13.2/52.35663/4.90706/10/58">Paradijs in de polder</a>
           </section>
+          <section>
+            <h1>Utrecht in Vogelvlucht</h1>
+            <a href="https://utrechtinvogelvlucht.nl">www.utrechtinvogelvlucht.nl</a>
+          </section>
         </section>
       <!-- VECTOR TILES -->
       <section>
@@ -474,10 +478,10 @@
         </section>
         <section>
           <h1>Hoe te visualiseren?</h1>
-          <p>
+          <p class="fragment grow">
             <a href="https://www.mapbox.com/mapbox-studio/">Mapbox Studio </a>
           </p>
-          <p>
+          <p class="fragment grow">
             <a href="https://www.mapbox.com/mapbox-gl-js/api/">MapboxGL.js</a>
           </p>
           <p>
@@ -492,17 +496,14 @@
         </section>
       </section>
       <!-- WEB DEVELOPMENT -->
-      <section>
+      <section data-background="presentation/img/Ams_basiskaart_light_42000.png">
         <section>
-          <h2>How to bring this all together?</h2>
+          <h2>What will we work with today?</h2>
           <div class="fragment fade-in">
             <h1> JavaScript!</h1>
             <p>Puts it all together,</p>
             <p>Tiles, content, interaction</p>
           </div>
-        </section>
-        <section>
-          <img src="presentation/img/web_map_building_blocks.png" height=" 50%">
         </section>
         <section>
           <h1>Making a Web Page</h1>
@@ -524,34 +525,31 @@
         <section>
           <h1>JavaScript Library</h1>
           <p> Including a JavaScript library in your code is like copying and pasting someone else's code
-            into yours. You
-            have access to everything in that library. </p>
+            into yours. You have access to everything in that library. </p>
             <p> In our case, it's a bunch of cool tools to make web maps and give them familiar functionality.</p>
         </section>
-        <section>
+        <!-- <section>
           <h1>JavaScript Libraries for Mapping</h1>
           <p><a href="https://openlayers.org/">OpenLayers</a>
-            <p class="fragment grow"><a href="http://leafletjs.com/">Leaflet.js</a></p>
-            <p class="fragment grow"><a href="https://d3js.org/">D3.js</a></p>
+            <p><a href="http://leafletjs.com/">Leaflet.js</a></p>
+            <p><a href="https://d3js.org/">D3.js</a></p>
             <p><a href="https://developers.google.com/maps/documentation/javascript/">Google Maps</a></p>
             <p><a href="https://www.mapbox.com/mapbox.js/api/v3.1.1/">Mapbox</a></p>
             <p><a href="https://developer.here.com/develop/javascript-api">HERE Maps</a></p>
-        </section>
+        </section> -->
         <section>
           <img src="https://media.giphy.com/media/QHE5gWI0QjqF2/giphy.gif">
         </section>
         <section>
           <q>Cartography is the new code.</q>
-          <img src="./reveal_js/img/cool_carthography.png">
+          <img src="presentation/img/cool_carthography.png">
+        </br>
           <small>
             <a href="https://www.wired.com/story/mapping-the-future-cartography-stages-a-comeback/">[source]</a>
           </small>
           <aside class="notes"> Programeren is key!!
             Cartografie is niet alleen maar de kaart ontwerpen er komt van allerlei techniek en interactie om heen.
           </aside>
-        </section>
-        <section>
-          <p>data design code</p>
         </section>
       </section>
       <!-- MAPBOX -->
@@ -570,6 +568,9 @@
         </section>
         <section>
           <img src="presentation/img/tiles_styles_sprites_glyphs.png">
+        </section>
+        <section>
+          <img src="presentation/img/vector_tile_creation.png">
         </section>
         <section>
           <pre><code data-trim data-noescape> 
